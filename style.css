@@ -74,6 +74,14 @@
     }
     /* Imagen que llena el área del hero (usa la misma medida que min-height para evitar desajustes) */
     .hero-img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1) contrast(1.05); display: block; }
+    /* Portada dividida en dos mitades */
+    .hero-media--split { display: flex; }
+    .hero-media--split .hero-img { width: 50%; }
+    /* En móvil: apiladas (arriba/abajo) para que ambas se vean bien */
+    @media (max-width: 640px) {
+      .hero-media--split { flex-direction: column; }
+      .hero-media--split .hero-img { width: 100%; height: 50%; }
+    }
     /* Mantén el padding del contenido del hero por encima de la imagen */
     .hero .container { padding: clamp(4rem, 6vw, 6rem) 0; display: grid; gap: 1rem; position: relative; z-index: 1; }
   /* Kicker del hero: usar verde oscuro para mayor contraste sobre la imagen */
